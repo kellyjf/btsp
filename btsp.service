@@ -3,5 +3,5 @@ Description=Bluetooth service
 
 [Service]
 Type=forking
-ExecStart=/usr/bin/btsp
+ExecStart=/etc/init.d/btsp
 
