@@ -3,5 +3,8 @@ Description=Bluetooth service
 
 [Service]
 Type=forking
-ExecStart=/etc/init.d/btsp
+ExecStart=/usr/bin/btsp
+
+[Install]
+WantedBy=multi-user.target
 
