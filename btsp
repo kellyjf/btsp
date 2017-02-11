@@ -1,12 +1,15 @@
 #!/bin/bash
 
+if [ -f /etc/defaults/btsp ]; then
+	. /etc/defaults/btsp
+fi
 
 killall rfcomm
 killall bluetoothd
 
 if ! hciconfig hci0; then
 	for cnt in $(seq 3); do
-		hciattach ttyS0 bcm43xx 115200 noflow && break
+		hciattach ${BTDEVICE:ttyS0} bcm43xx 115200 noflow && break
 	done
 fi
 
